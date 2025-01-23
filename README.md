@@ -27,7 +27,7 @@ needed use g = 9.8 unless a different value is specified in the question.
 
 ### Results
 
-**Out of 75 marks allocated for the exam paper, DeepSeek-R1 was able to score 74 (i.e. 99%) in less than 2 minutes versus the exam duration time of 90 minutes.**
+**Out of 75 marks allocated for the exam paper, DeepSeek-R1 was able to score 74 (i.e. 99%) in less than 5 minutes versus the exam duration time of 90 minutes.**
 
 In the `further-maths-answers.txt` and `further-maths-reasoning` file you will see the solutions and reasoning provided by DeepSeek-R1. 
 
