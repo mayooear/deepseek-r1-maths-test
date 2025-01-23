@@ -1,0 +1,79 @@
+DEEPSEEK R1 SOLUTIONS:
+1. (a) x = 1
+   The intersection is the line z = 1 + 2y. Sketch a straight line in the y-z plane with slope 2 and z-intercept 1.
+
+   (b) y = 1
+   The intersection is the parabola z = x^2 + 2. Sketch an upward-opening parabola with vertex at (0, 2).
+
+---
+
+2. (a) Using surface area formula for revolution about the x-axis:
+   A = 2π ∫(from 0 to 1) √(1 + 2x^2) dx. This matches the given form with k = 2.
+
+   (b) Manufacturing tolerance (0.5%) is within required 1%. All components are suitable.
+
+---
+
+3. (a) Cross product a × b = 2i + 6j -11k. Solving gives p = 7, q = 4.
+
+   (b)(i) Volume equation |2d + 6e -11f| = 42. Relationships: 2d + 6e -11f = ±42.
+
+   (ii) These represent two parallel planes where point C must lie for volume 7.
+
+---
+
+4. Using reduction formula for I_n:
+   A_n = (n+1)/(n+2). Sequence increases since A_{n+1} - A_n > 0. Limit A = 1.
+
+---
+
+5. (a)(i) Cayley table for G under ×₃₂:
+
+   |   | 1 | 9 |17 |25 |
+   |---|---|---|---|---|
+   |1  |1 |9 |17 |25 |
+   |9  |9 |17|25 |1  |
+   |17 |17|25|1  |9  |
+   |25 |25|1 |9  |17 |
+
+   (ii) G has elements of order 4 ⇒ C₄.
+
+   (b)(i) Odd quadratic residues mod32: {1, 9, 17, 25}.
+
+   (ii) For odd n, n^6 + 3n^4 + 7n^2 ≡ 11 mod 32 by checking residues.
+
+---
+
+6. (a) Hessian determinant:
+   -(2y sin y)/x^2 - (cos y - 1/x^2)^2.
+
+   (b) Determinant < 0 ⇒ saddle point.
+
+   (c) From stationary conditions, derive β + tan β = 0.
+
+---
+
+7. (a) α + β = 1, αβ = -1.
+
+   (b)(i) S_2 = 3, S_3 = 4.
+   (ii) Use recurrence α^{n+2} = α^{n+1} + α^n, same for β.
+   (iii) Integers by induction.
+
+   (c)(i) T_n = α^n omits β^n.
+   (ii) Use T_n = α^n + (-1)^n α^{-n}.
+
+---
+
+8. (a)(i) 2121_n = (n^2 + 1)(2n + 1).
+   (ii) Product of two integers >1 ⇒ composite.
+
+   (b)(i) gcd(n² +1, 2n+1) divides 5 ⇒ h = 1 or 5.
+   (ii) Example: n = 7.
+
+---
+
+9. (a) Identity: 0.
+   (b) Inverse of x is -x.
+   (c) Associative via algebraic verification.
+   (d) Operation undefined if ab +1 = 0.
+   (e) D = {0, i√3, -i√3} forms a group under ⊕.
