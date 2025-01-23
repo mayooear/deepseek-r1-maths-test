@@ -1,0 +1,786 @@
+STUDENT REASONING AND WORK PROOFS:
+Okay, let's start tackling these problems one by one. I need to make sure I understand each question properly before diving into solving them. Let's start with question 1.
+
+**Question 1: Sketching sections of a surface**
+
+The surface S is given by z = x² + 2y. We need to sketch the intersection of S with the planes x=1 and y=1.
+
+**(a) Plane Π: x = 1**
+
+When x is fixed at 1, substitute x=1 into the equation of S. That gives z = (1)² + 2y = 1 + 2y. So in the plane x=1, which is a vertical plane parallel to the y-z plane, the intersection is the line z = 1 + 2y. But since we are in 3D, but sketching on 2D axes (probably y vs z), it would be a straight line with slope 2 and z-intercept 1.
+
+**(b) Plane Π: y = 1**
+
+Similarly, fixing y=1, substitute into S: z = x² + 2(1) = x² + 2. This is a parabola in the x-z plane (since y is fixed at 1), opening upwards, vertex at (0, 2). The sketch would show a parabola with vertex at z=2 when x=0, and increasing as |x| increases.
+
+I think that's straightforward. For each part, just substituting the fixed variable into the equation and sketching the resulting curve in the respective plane.
+
+**Question 2: Surface area of revolution**
+
+Given the curve y = √(1 + x²) from x=0 to x=1, rotated about the x-axis. The surface area A is to be shown in a specific integral form.
+
+**(a) Show A = 2π ∫₀¹ √(1 + k x⁻²) dx**
+
+The formula for surface area when rotating around the x-axis is A = 2π ∫ y √(1 + (dy/dx)²) dx from 0 to 1.
+
+First, compute dy/dx. Given y = √(1 + x²), so dy/dx = (1/(2√(1 + x²))) * 2x = x / √(1 + x²).
+
+Then (dy/dx)² = x² / (1 + x²).
+
+So the integrand becomes √(1 + x²/(1 + x²)) = √[(1 + x² + x²)/(1 + x²)] = √[(1 + 2x²)/(1 + x²)].
+
+Wait, but the problem states it should be √(1 + k x⁻²). Let me check again.
+
+Wait, maybe I need to manipulate the expression under the square root differently.
+
+Starting from 1 + (dy/dx)^2:
+
+1 + (x² / (1 + x²)) = (1 + x² + x²)/(1 + x²) = (1 + 2x²)/(1 + x²). Hmm, so inside the sqrt, it's (1 + 2x²)/(1 + x²). Let me write that as:
+
+√[(1 + 2x²)/(1 + x²)] = √[ (1 + x² + x²)/(1 + x²) ) ] = √[1 + (x²)/(1 + x²)].
+
+But the problem states √(1 + k x⁻²). So maybe we need to factor out x² from numerator and denominator?
+
+Wait, 1 + 2x² in the numerator and 1 + x² in the denominator. Let's try to write the expression as:
+
+(1 + 2x²)/(1 + x²) = (2x² + 1)/(x² + 1) = 2 - (1)/(x² + 1). Hmm, not sure if that helps.
+
+Alternatively, perhaps there's an error in my calculation. Let me check dy/dx again.
+
+y = sqrt(1 + x²). Then dy/dx = x / sqrt(1 + x²). Correct. Then (dy/dx)^2 = x² / (1 + x²). Correct. Then 1 + (dy/dx)^2 = (1 + x² + x²)/(1 + x²) = (1 + 2x²)/(1 + x²). So sqrt of that is sqrt(1 + 2x²)/sqrt(1 + x²). Hmm.
+
+But the problem says to show that A = 2π ∫₀¹ sqrt(1 + k x⁻²) dx. Wait, but my current integrand is sqrt( (1 + 2x²)/(1 + x²) ). Let's see if that can be rewritten as sqrt(1 + k x⁻²).
+
+Let me manipulate:
+
+(1 + 2x²)/(1 + x²) = [1 + x² + x²]/(1 + x²) = 1 + x²/(1 + x²)
+
+But x²/(1 + x²) = 1 - 1/(1 + x²). Not sure.
+
+Alternatively, perhaps factor out x² in the denominator:
+
+(1 + 2x²)/(1 + x²) = (x²(2 + 1/x²)) / (x²(1/x² + 1)) ) = (2 + 1/x²)/(1/x² + 1) = (2 + 1/x²)/(1 + 1/x²)
+
+But then sqrt of that is sqrt(2 + 1/x²)/sqrt(1 + 1/x²). Not sure if that helps.
+
+Wait, maybe multiply numerator and denominator by x²:
+
+(1 + 2x²)/(1 + x²) = (x² + 2x⁴)/(x² + x⁴). Not helpful.
+
+Alternatively, perhaps a substitution. Let me see. Let’s set u = x². Then expression becomes (1 + 2u)/(1 + u). Still not helpful.
+
+Wait, perhaps the problem is expecting a different approach. Let me check again the surface area formula. Maybe I made a mistake in the formula.
+
+Surface area when rotating about x-axis: A = 2π ∫ y ds, where ds is the arc length element, which is sqrt(1 + (dy/dx)^2) dx. So yes, that's correct. So A = 2π ∫₀¹ sqrt(1 + x²/(1 + x²)) * sqrt(1 + x²) dx? Wait, no. Wait:
+
+Wait, no. Wait, the formula is A = 2π ∫ y * sqrt(1 + (dy/dx)^2) dx. So in this case, y = sqrt(1 + x²), so:
+
+A = 2π ∫₀¹ sqrt(1 + x²) * sqrt(1 + (x²/(1 + x²))) dx
+
+So first, sqrt(1 + x²) is y, then multiplied by sqrt(1 + (dy/dx)^2). Let's compute the product:
+
+sqrt(1 + x²) * sqrt(1 + x²/(1 + x²)) = sqrt( (1 + x²)(1 + x²/(1 + x²)) )
+
+Let me compute the inside:
+
+(1 + x²)(1 + x²/(1 + x²)) = (1 + x²) + (1 + x²)(x²)/(1 + x²) = (1 + x²) + x² = 1 + 2x²
+
+Therefore, the integrand becomes sqrt(1 + 2x²). Wait, but the problem states sqrt(1 + k x⁻²). There's a discrepancy here.
+
+Wait, maybe there's a miscalculation here. Let's redo the multiplication:
+
+sqrt(1 + x²) * sqrt(1 + (dy/dx)^2) = sqrt( (1 + x²)(1 + (x²)/(1 + x²)) )
+
+= sqrt( (1 + x²) * [ (1 + x²) + x² ) / (1 + x²) ] )
+
+Wait, 1 + (x²)/(1 + x²) = [ (1 + x²) + x² ] / (1 + x²) ) = (1 + 2x²)/(1 + x²)
+
+Therefore, (1 + x²) * (1 + 2x²)/(1 + x²) = 1 + 2x²
+
+Therefore, the integrand is sqrt(1 + 2x²). Therefore, A = 2π ∫₀¹ sqrt(1 + 2x²) dx.
+
+But the problem says Show that A = 2π ∫₀¹ sqrt(1 + k x⁻²) dx. So this seems different. Unless there's a manipulation here.
+
+Wait, sqrt(1 + 2x²) can be written as sqrt( (2x² + 1) ) = x sqrt(2 + 1/x²) for x ≠ 0. So sqrt(1 + 2x²) = x sqrt(2 + 1/x²) = sqrt( x²(2 + 1/x²) ) = sqrt(2x² + 1). Wait, but how does this relate to sqrt(1 + k x^{-2})?
+
+Wait, if I factor out x^{-2} inside the sqrt:
+
+sqrt(1 + 2x²) = sqrt( x²(2 + 1/x²) ) = x sqrt(2 + 1/x² )
+
+But this would lead to integrand x sqrt(2 + 1/x² ) = sqrt(2x² + 1). Hmm, not sure.
+
+Alternatively, maybe there's a typo in the problem statement? Or perhaps I need to make a substitution. Wait, let's see.
+
+If they want sqrt(1 + k x^{-2}), then let's see:
+
+sqrt(1 + k x^{-2}) = sqrt( (x² + k)/x² ) = sqrt(x² + k)/x. Therefore, if we set this equal to sqrt(1 + 2x²), then:
+
+sqrt(x² + k)/x = sqrt(1 + 2x²)
+
+Squaring both sides: (x² + k)/x² = 1 + 2x²
+
+Multiply both sides by x²: x² + k = x² + 2x⁴
+
+Subtract x²: k = 2x⁴. But k is supposed to be a constant integer. Therefore, this approach isn't working. So maybe there's a mistake in my previous steps.
+
+Wait, the problem says "Show that A = 2π ∫₀¹ √(1 + k x⁻²) dx for some integer k to be determined." But according to my calculations, the integrand is sqrt(1 + 2x²). So perhaps there's a different parameterization?
+
+Wait, maybe the problem had a different curve? Let me check again.
+
+The curve is y = sqrt(1 + x²). So when rotated around the x-axis, the surface area is A = 2π ∫ y √(1 + (dy/dx)^2 ) dx.
+
+But let's recompute (dy/dx):
+
+y = sqrt(1 + x²), so dy/dx = x / sqrt(1 + x²). Therefore, (dy/dx)^2 = x²/(1 + x²). Then 1 + (dy/dx)^2 = (1 + x² + x²)/(1 + x²) = (1 + 2x²)/(1 + x²). Then sqrt of that is sqrt(1 + 2x²)/sqrt(1 + x²). Then multiplying by y = sqrt(1 + x²), gives sqrt(1 + 2x²). Therefore, A = 2π ∫ sqrt(1 + 2x²) dx from 0 to 1. So this seems different from the given expression in the problem.
+
+But the problem says A = 2π ∫₀¹ √(1 + k x⁻²) dx. Unless there's a mistake in the problem or my calculations.
+
+Wait, perhaps the integral is expressed in terms of x^{-2}? Let me check with substitution.
+
+Suppose we let t = 1/x. Then when x approaches 0, t approaches infinity, but our integral is from 0 to 1. Hmm, not sure.
+
+Alternatively, maybe integrating factor or different substitution. Wait, maybe integrating sqrt(1 + 2x²) can be expressed as sqrt(1 + k x^{-2})... but it's unclear. Wait, perhaps there is a mistake here. Alternatively, maybe I misread the problem.
+
+Wait, the problem says "Show that A = 2π ∫(from 0 to 1) √(1 + k x⁻²) dx for some integer k to be determined."
+
+Wait, but according to my calculations, the integrand is sqrt(1 + 2x²). So unless there's an algebraic manipulation error. Let me see:
+
+Wait, sqrt(1 + 2x²) = sqrt( (sqrt(2)x)^2 + 1 ), which is similar to sqrt(a²x² + b²), but the problem states sqrt(1 + k x^{-2}). It's possible that the problem intended a different setup. Alternatively, maybe I need to manipulate the expression differently. Let me think again.
+
+Wait, if we consider that the problem might have a typo, but assuming it's correct, perhaps the student is supposed to adjust the integral expression. Wait, but if we have sqrt(1 + k x^{-2}), that would be sqrt(1 + k / x²). If x is in [0,1], then this expression becomes problematic as x approaches 0, because 1/x² tends to infinity. However, in our case, the original integrand sqrt(1 + 2x²) is well-behaved at x=0. Therefore, there might be a fundamental error here.
+
+Wait, perhaps the problem is referring to a different parameterization. For instance, if the curve was given as y = sqrt(1 + x^{-2}), but it's not. Wait, the given curve is y = sqrt(1 + x²). So unless there's a substitution where x is replaced by 1/t or something. Alternatively, maybe expressing x in terms of y. Let me try that.
+
+If y = sqrt(1 + x²), then x = sqrt(y² - 1). Then dx/dy = y / sqrt(y² -1). Then the surface area when rotating around x-axis can also be written as ∫ 2π y ds, where ds = sqrt( (dx/dy)^2 + 1 ) dy. But this seems more complicated. Let's compute ds:
+
+dx/dy = y / sqrt(y² -1), so (dx/dy)^2 = y²/(y² -1). Then 1 + (dx/dy)^2 = (y² -1 + y²)/(y² -1) = (2y² -1)/(y² -1). Then sqrt of that is sqrt( (2y² -1)/(y² -1) ). Then the integrand becomes 2π y * sqrt( (2y² -1)/(y² -1) ) dy. This seems even more complicated. Probably not the way to go.
+
+Wait, maybe integrating sqrt(1 + 2x²) can be written as sqrt(1 + k x^{-2}) after substitution. Let me consider substitution t = x^m for some m. Let's see.
+
+Suppose we let t = x^k. Then dx = (1/k) t^{(1/k)-1} dt. Not sure. Alternatively, let me check if sqrt(1 + 2x²) can be expressed as sqrt(1 + k x^{-2}).
+
+Suppose sqrt(1 + 2x²) = sqrt(1 + k/x²). Then squaring both sides: 1 + 2x² = 1 + k/x². Therefore, 2x² = k / x², so 2x⁴ = k. But k is supposed to be a constant integer, but here it's equal to 2x⁴, which is variable. Therefore, this is impossible. So there must be a mistake here.
+
+Wait, perhaps the problem is stated incorrectly? Alternatively, maybe I need to consider another approach. Wait, let's re-examine the problem statement.
+
+"A curve has equation y = √(1 + x²), for 0 ≤ x ≤ 1, where both the x- and y-units are in cm. The area of the surface generated when this curve is rotated fully about the x-axis is A cm².
+
+(a) Show that A = 2π ∫(from 0 to 1) √(1 + k x⁻²) dx for some integer k to be determined."
+
+Wait, maybe they made a mistake in the integrand? Because according to my calculation, the integrand is sqrt(1 + 2x²), not sqrt(1 + k x^{-2} ). But if the problem says that, maybe they have a different parametrization or a different coordinate system?
+
+Alternatively, maybe there's an error in the problem, and k is supposed to be in x²? But the problem says x⁻². Alternatively, perhaps the student is supposed to manipulate the integral expression to express it in terms of x^{-2}, but that seems not straightforward.
+
+Alternatively, perhaps the problem is referring to a different surface of revolution? Like rotating around the y-axis instead of x-axis. Let's check:
+
+If we rotate around the y-axis, the formula is A = 2π ∫ x √(1 + (dx/dy)^2 ) dy. Let's try that.
+
+Given y = sqrt(1 + x²), so x = sqrt(y² -1). Then dx/dy = y / sqrt(y² -1). Then (dx/dy)^2 = y²/(y² -1). So 1 + (dx/dy)^2 = (y² -1 + y²)/(y² -1) = (2y² -1)/(y² -1). Then the integrand is x * sqrt( (2y² -1)/(y² -1) ) = sqrt(y² -1) * sqrt( (2y² -1)/(y² -1) ) ) = sqrt(2y² -1). Therefore, the integral becomes 2π ∫ sqrt(2y² -1) dy. But the limits of integration would be from y=1 (x=0) to y=√2 (x=1). Not sure if this helps. But still, this doesn't match the given integrand in the problem.
+
+Alternatively, maybe the problem intended parametric equations? Not sure.
+
+Wait, perhaps the problem is a different curve. Let me check again. The problem says "the curve has equation y = √(1 + x²) for 0 ≤ x ≤ 1". Then the surface area when rotated about x-axis. The standard formula gives me A = 2π ∫₀¹ y sqrt(1 + (dy/dx)^2 ) dx = 2π ∫₀¹ sqrt(1 + x²) * sqrt(1 + x²/(1 + x²)) dx = 2π ∫₀¹ sqrt(1 + 2x²) dx. So unless there's a way to express sqrt(1 + 2x²) as sqrt(1 + k x^{-2} ), which seems impossible unless k varies with x. Therefore, I think there might be an error in the problem statement. But since the problem says "Show that A = 2π ∫₀¹ sqrt(1 + k x⁻² ) dx", perhaps I need to re-examine my steps.
+
+Wait, maybe I made a mistake in the differentiation step. Let me recompute dy/dx.
+
+Given y = sqrt(1 + x²), dy/dx = (1/(2 sqrt(1 + x²))) * 2x = x / sqrt(1 + x²). Correct. Then (dy/dx)^2 = x²/(1 + x²). Correct. Then 1 + (dy/dx)^2 = 1 + x²/(1 + x²) = (1 + x² + x²)/(1 + x²) = (1 + 2x²)/(1 + x²). Correct. Then multiplying by y = sqrt(1 + x²), gives sqrt(1 + x²) * sqrt( (1 + 2x²)/(1 + x²) ) = sqrt(1 + 2x²). Correct.
+
+So unless there's a different parametrization, the integrand is sqrt(1 + 2x²). Therefore, perhaps the problem has a typo, and the intended expression was sqrt(1 + 2x²) instead of sqrt(1 + k x⁻² ). Alternatively, maybe the problem is referring to a different axis of rotation? But the problem says "rotated fully about the x-axis", so that's correct.
+
+Alternatively, maybe the student is supposed to use substitution to express the integral in terms of x⁻². For example, let u = 1/x. Then when x approaches 0, u approaches infinity, but integrating from x=0 to x=1 would translate to u from infinity to 1. But integrating sqrt(1 + 2x²) dx from 0 to1 is not the same as integrating sqrt(1 + k u² ) du from 1 to infinity.
+
+Alternatively, perhaps the problem intended to ask for the integral in terms of y. But y = sqrt(1 + x²), so x = sqrt(y² -1). Then dx = y / sqrt(y² -1) dy. Then the integral becomes 2π ∫ sqrt(1 + 2x²) dx = 2π ∫ sqrt(1 + 2(y² -1)) * (y / sqrt(y² -1)) dy. Let's compute:
+
+1 + 2(y² -1) = 1 + 2y² -2 = 2y² -1. So the integrand becomes sqrt(2y² -1) * (y / sqrt(y² -1)) dy. Not sure if this helps.
+
+Alternatively, perhaps a trigonometric substitution. Let me try x = tanθ. Then dx = sec²θ dθ. sqrt(1 + 2x²) = sqrt(1 + 2 tan²θ ). But again, not sure how that relates.
+
+Wait, the problem states "Show that A = 2π ∫₀¹ sqrt(1 + k x⁻²) dx for some integer k to be determined." But according to my calculation, the integrand is sqrt(1 + 2x²), so unless the problem is wrong or there's an alternative approach. Alternatively, maybe the integral is manipulated into a different form. Let me check.
+
+Suppose we factor out x² inside the square root:
+
+sqrt(1 + 2x²) = x sqrt(2 + 1/x² ). Therefore, the integrand becomes x sqrt(2 + 1/x² ). But then:
+
+A = 2π ∫₀¹ x sqrt(2 + 1/x² ) dx = 2π ∫₀¹ sqrt(2x² + 1) dx.
+
+But this is the same as before. So unless they want to write sqrt(2x² +1 ) as sqrt(1 + k x⁻² )*x, but then k=2x², which is not a constant. So this approach doesn't work.
+
+Alternatively, maybe the problem intended to have the integral expressed as 2π ∫ sqrt(1 + k x^{-2} ) dx, but with k being a function. But the problem says "for some integer k to be determined". Since k has to be an integer, and in my calculation, the integrand is sqrt(1 + 2x²), which cannot be written as sqrt(1 + k x^{-2} ) with k constant, I must conclude that either there's a mistake in the problem statement or perhaps a misinterpretation on my part.
+
+Alternatively, maybe the curve is y = sqrt(1 + x^{-2} ), but that's not the case. The problem says y = sqrt(1 + x² ). Hmm.
+
+Wait, perhaps the problem is correct, and I need to re-express the integral. Let me consider that the integral given in the problem is 2π ∫ sqrt(1 + k x^{-2} ) dx. So sqrt(1 + k x^{-2} ) = sqrt( (x² + k)/x² ) = sqrt(x² + k)/x. Therefore, the integrand is sqrt(x² + k)/x. So the integral becomes 2π ∫ sqrt(x² + k)/x dx. Let me compute this integral and see if it can be related to sqrt(1 + 2x²).
+
+But ∫ sqrt(x² +k)/x dx is a standard integral. Let me try substituting t = sqrt(x² +k). Then dt/dx = x / sqrt(x² +k). So x dt = t dx. Not sure.
+
+Alternatively, let u = x² +k, then du = 2x dx. But in the integral, we have sqrt(u)/x dx. Not straightforward.
+
+Alternatively, substitution t = sqrt(x² +k). Then t = sqrt(x² +k), so t² = x² +k. Then x = sqrt(t² -k). Then dx = t / sqrt(t² -k) dt. Then the integral becomes ∫ t / sqrt(t² -k) * t dt. Wait, that's ∫ t² / sqrt(t² -k) dt. Not helpful.
+
+Alternatively, substitute θ such that x = sqrt(k) tanθ. Then dx = sqrt(k) sec²θ dθ. Then sqrt(x² +k ) = sqrt(k tan²θ +k ) = sqrt(k(tan²θ +1 )) = sqrt(k) secθ. Then the integral becomes sqrt(k) secθ / (sqrt(k) tanθ ) * sqrt(k) sec²θ dθ ) = sqrt(k) secθ / (sqrt(k) tanθ ) * sqrt(k) sec²θ dθ ) = sqrt(k) * (secθ / tanθ ) * sec²θ dθ.
+
+But secθ / tanθ = 1 / sinθ. So integral becomes sqrt(k) * (1 / sinθ ) * sec²θ dθ = sqrt(k) ∫ sec²θ / sinθ dθ. This seems complicated. Not helpful.
+
+Therefore, unless there's a different approach, I can't reconcile the integral given in the problem with the integrand I obtained. Therefore, maybe the problem is incorrect, or perhaps I made a mistake.
+
+Wait, let's check the formula for surface area again. Maybe it's different if expressed in terms of another variable? For example, using parametric equations.
+
+But the curve is given as y = f(x), so parametric equations are x = t, y = sqrt(1 + t²), z = 0. Then surface area when rotated about x-axis is indeed 2π ∫ y ds, where ds = sqrt( (dx/dt)^2 + (dy/dt)^2 ) dt. Since dx/dt =1, dy/dt = t / sqrt(1 + t² ). So ds = sqrt(1 + t²/(1 + t² )) dt = sqrt( (1 + t² + t² ) / (1 + t² )) dt = sqrt( (1 + 2t² ) / (1 + t² )) dt. Then multiplying by y = sqrt(1 + t² ), gives sqrt(1 + 2t² ). So the integrand is indeed sqrt(1 + 2t² ). Therefore, the integral is 2π ∫₀¹ sqrt(1 + 2t² ) dt, which is the same as my previous result.
+
+Therefore, the problem statement must have an error. However, since the problem asks to show that A is equal to 2π ∫ sqrt(1 + k x⁻² ) dx, maybe there is a different interpretation. Alternatively, perhaps the problem intended to have the curve y = sqrt(1 + x⁻² )? If that's the case, then repeating the steps:
+
+y = sqrt(1 + 1/x² ). Then dy/dx = (1/(2 sqrt(1 + 1/x² )) ) * (-2/x³ ) = -1/(x³ sqrt(1 + 1/x² )). Then (dy/dx)^2 = 1/(x⁶ (1 + 1/x² )) = 1/(x⁶ + x⁴ ). Then 1 + (dy/dx)^2 = 1 + 1/(x⁶ + x⁴ ) = (x⁶ + x⁴ +1 )/(x⁶ + x⁴ ). Then sqrt(1 + (dy/dx)^2 ) = sqrt( (x⁶ + x⁴ +1 )/(x⁶ + x⁴ ) ). Multiplying by y = sqrt(1 + 1/x² ) = sqrt( (x² +1 )/x² ). Therefore, integrand becomes sqrt( (x² +1 )/x² ) * sqrt( (x⁶ + x⁴ +1 )/(x⁶ + x⁴ ) ). This seems even more complicated.
+
+Alternatively, if the problem is correct, perhaps the answer is k = 2, but expressed differently. Wait, but how?
+
+Wait, if I write sqrt(1 + 2x² ) = sqrt(1 + 2x² ). If I factor out x² inside the square root:
+
+sqrt(x² (2 + 1/x² )) = x sqrt(2 + 1/x² ). Then, the integral becomes 2π ∫ x sqrt(2 + 1/x² ) dx from 0 to1. But this is integrating x times sqrt(2 + 1/x² ). However, this doesn't match the form given in the problem. The problem's integrand is sqrt(1 + k x⁻² ), which would be sqrt(1 + k /x² ) = sqrt( (x² +k )/x² ) = sqrt(x² +k )/x. So in order to have the integrand sqrt(x² +k )/x, we need to have sqrt(x² +k )/x = sqrt(2 + 1/x² ). Therefore, sqrt(x² +k )/x = sqrt(2 + 1/x² ). Squaring both sides: (x² +k )/x² = 2 + 1/x². Multiply both sides by x²: x² +k = 2x² +1. Therefore, k = x² +1. But k is supposed to be a constant integer, so this is impossible. Therefore, contradiction. So the problem must have an error.
+
+Given that, perhaps the intended integral was 2π ∫ sqrt(1 + 2x² ) dx and the problem statement has a typo. If that's the case, then k=2. However, given the problem states "k x⁻²", which would be k/x², but since it's not possible, I need to inform the user about this inconsistency. However, since this is an exam question, perhaps I need to proceed under the assumption that there is a correct path.
+
+Alternatively, perhaps the problem is referring to the lateral surface area excluding the disk at x=1? No, the problem says "the area of the surface generated", which includes the entire surface.
+
+Alternatively, maybe the problem meant to write "√(1 +k x²)" instead of "√(1 +k x⁻² )". If that's the case, then k=2. But since the problem says "x⁻²", this is confusing.
+
+Alternatively, maybe the integral is expressed in terms of another variable substitution. For example, let u = y. Then y = sqrt(1 +x² ), so x = sqrt(y² -1 ). Then dx = y / sqrt(y² -1 ) dy. Then the integral becomes:
+
+A = 2π ∫ sqrt(1 + 2x² ) dx = 2π ∫ sqrt(1 + 2(y² -1 )) * (y / sqrt(y² -1 )) dy from y=1 to y=sqrt(2).
+
+Simplify inside sqrt: 1 + 2y² -2 = 2y² -1. So integrand becomes sqrt(2y² -1 ) * y / sqrt(y² -1 ) dy = y sqrt( (2y² -1 )/(y² -1 )) dy.
+
+But this still doesn't match the given form.
+
+Alternatively, perhaps another substitution. Let me try substituting t = x². Then dt = 2x dx. So x dx = dt/2. But the integral is sqrt(1 + 2x² ) dx. Hmm, not helpful.
+
+Alternatively, integrating by parts. Let u = x, dv = sqrt(1 + 2x² ) dx. Then du = dx, v = ?
+
+But integrating sqrt(1 + 2x² ) dx is a standard integral. The antiderivative is (x/2) sqrt(1 + 2x² ) + (1/(4√2 )) sinh^{-1}(√2 x ) ) + C. But this might not help in expressing in terms of sqrt(1 + k x⁻² ).
+
+At this point, I think there's a mistake in the problem statement, but since I need to provide a solution, perhaps the problem intended k=2 and the integrand is sqrt(1 + 2x² ), with a typo in the exponent. Therefore, the answer is k=2. So part (a) answer: k=2.
+
+But the problem says "Show that A = 2π ∫₀¹ √(1 + k x⁻²) dx for some integer k to be determined." If we accept that the exponent is a typo and should be x² instead of x⁻², then k=2. Otherwise, there's an inconsistency. Given that, perhaps the intended answer is k=2, and the problem has a typo.
+
+Alternatively, maybe the original problem had a different curve, such as y = sqrt(1 + 1/x² ), which would lead to integrand sqrt(1 + k x⁻² ). Let's check that curve.
+
+If y = sqrt(1 + 1/x² ), then dy/dx = (-1/x³ ) / (2 sqrt(1 +1/x² )) = -1/(2 x³ sqrt(1 +1/x² )). Then (dy/dx )² = 1/(4 x⁶ (1 +1/x² )) = 1/(4 x⁶ +4 x⁴ ). Then 1 + (dy/dx )² = 1 + 1/(4x⁶ +4x⁴ ) = (4x⁶ +4x⁴ +1 )/(4x⁶ +4x⁴ ). Then sqrt(1 + (dy/dx )² ) = sqrt( (4x⁶ +4x⁴ +1 )/(4x⁶ +4x⁴ ) ). Multiplying by y = sqrt(1 +1/x² ) = sqrt( (x² +1 )/x² ) gives:
+
+sqrt( (x² +1 )/x² ) * sqrt( (4x⁶ +4x⁴ +1 )/(4x⁶ +4x⁴ ) ) = sqrt( (x² +1 )(4x⁶ +4x⁴ +1 )/(x² (4x⁶ +4x⁴ )) )
+
+This seems even more complex, so probably not.
+
+Given the time I've spent and the lack of progress, I think the problem likely has a typo, and the intended integrand was sqrt(1 + 2x² ), leading to k=2. Therefore, part (a) answer is k=2.
+
+Moving to part (b):
+
+The curved surface area must be 8 cm² with accuracy within 1%. The engineering process has accuracy within 0.5%. So the question is whether the manufacturing tolerance (0.5%) is within the required tolerance (1%). Therefore, since 0.5% < 1%, all produced components will be suitable. So the answer is yes, all components will be suitable.
+
+**Question 3: Vectors and tetrahedron volume**
+
+(a) Given vectors a = i + p j + q k and b = 2i +3j +2k. Compute the cross product a × b and set it equal to 2i +6j -11k.
+
+Compute a × b:
+
+|i   j   k|
+
+|1   p   q|
+
+|2   3   2|
+
+= i*(p*2 - q*3) - j*(1*2 - q*2) + k*(1*3 - p*2)
+
+= (2p - 3q)i - (2 - 2q)j + (3 - 2p)k
+
+Set this equal to 2i +6j -11k.
+
+Thus:
+
+2p -3q = 2   (1)
+
+-(2 - 2q) =6 → -2 + 2q =6 → 2q=8 → q=4   (2)
+
+3 - 2p = -11 → -2p = -14 → p=7   (3)
+
+Check equation (1): 2*7 -3*4 =14 -12=2. Correct. So p=7, q=4.
+
+(b)(i) Tetrahedron OABC has volume 7. Volume of tetrahedron is 1/6 | (a × b) • c |, where c is the vector from O to C, which is (d, e, f). Using the values p=7, q=4, so a × b =2i +6j -11k as given. Then (a × b) • c = 2d +6e -11f. The volume is 1/6 |2d +6e -11f| =7. Therefore:
+
+|2d +6e -11f| =42. So 2d +6e -11f = ±42. Therefore, the relationships are 2d +6e -11f =42 or 2d +6e -11f =-42.
+
+(b)(ii) The geometrical significance is that these equations represent two parallel planes in 3D space. Any point C lying on either of these planes will form a tetrahedron with O, A, B of volume 7. The two planes are on opposite sides relative to the origin.
+
+**Question 4: Sequence Aₙ = Iₙ₊₂ / Iₙ**
+
+Given Iₙ = ∫₀^{π/2} cosⁿx dx. Need to show that Aₙ increases monotonically and converges to a limit.
+
+First, recall the reduction formula for Iₙ: Iₙ = ((n-1)/n) Iₙ₋₂ for n ≥2. Therefore, Iₙ₊₂ = ((n+1)/(n+2)) Iₙ. Therefore, Aₙ = Iₙ₊₂ / Iₙ = (n+1)/(n+2).
+
+Wait, that can't be. Wait, let's compute Iₙ₊₂ / Iₙ.
+
+Using the reduction formula: Iₙ = (n-1)/n Iₙ₋₂. So rearranged, Iₙ₊₂ = (n+1)/(n+2) Iₙ.
+
+Therefore, Aₙ = Iₙ₊₂ / Iₙ = (n+1)/(n+2).
+
+Therefore, the sequence Aₙ = (n+1)/(n+2). Then, is this increasing?
+
+Compute Aₙ₊₁ - Aₙ = (n+2)/(n+3) - (n+1)/(n+2) = [(n+2)² - (n+1)(n+3)] / [(n+3)(n+2)]
+
+Simplify numerator: (n² +4n +4) - (n² +4n +3 )=1. Therefore, Aₙ₊₁ - Aₙ =1 / [(n+3)(n+2)] >0. Therefore, the sequence Aₙ is strictly increasing.
+
+Next, find the limit as n→∞. Aₙ = (n+1)/(n+2) = (1 +1/n)/(1 +2/n) →1/1=1 as n→∞. Therefore, the limit A=1.
+
+But wait, the problem says "exact value should be stated". So the limit is 1.
+
+**Question 5: Group theory and quadratic residues**
+
+(a)(i) Cayley table for G={1,9,17,25} under ×₃₂.
+
+First, compute the products modulo 32.
+
+Elements are 1,9,17,25.
+
+Compute each product:
+
+1*1=1 mod32
+
+1*9=9
+
+1*17=17
+
+1*25=25
+
+9*1=9
+
+9*9=81 mod32=81-2*32=17
+
+9*17=153 mod32: 153 -4*32=153-128=25
+
+9*25=225 mod32:225-7*32=225-224=1
+
+17*1=17
+
+17*9=153 mod32=25
+
+17*17=289 mod32=289-9*32=289-288=1
+
+17*25=425 mod32:425-13*32=425-416=9
+
+25*1=25
+
+25*9=225 mod32=1
+
+25*17=425 mod32=9
+
+25*25=625 mod32=625-19*32=625-608=17
+
+Thus, the Cayley table is:
+
+|1 9 17 25
+
+1|1 9 17 25
+
+9|9 17 25 1
+
+17|17 25 1 9
+
+25|25 1 9 17
+
+Wait, let me check 9*9=81 mod32=81-2*32=17. Correct. Then 9*17=153 mod32: 153-4*32=153-128=25. Correct. 9*25=225 mod32=1. Correct.
+
+17*9=153 mod32=25. Correct. 17*17=289 mod32=1. Correct. 17*25=425 mod32=9. Correct.
+
+25*9=225 mod32=1. Correct. 25*17=425 mod32=9. Correct. 25*25=625 mod32=17. Correct.
+
+So the Cayley table is:
+
+Row 1: 1,9,17,25
+
+Row 9:9,17,25,1
+
+Row17:17,25,1,9
+
+Row25:25,1,9,17
+
+(a)(ii) Determine if G is isomorphic to C₄ or K₄.
+
+Looking at the Cayley table, each element appears exactly once in each row and column, so it's a Latin square. The group is of order 4. C₄ is cyclic, meaning there's an element of order 4. K₄ is the Klein four-group, where every element has order 2.
+
+Check the orders of elements in G:
+
+1 has order 1.
+
+9: Compute 9^2=81 mod32=17, 9^3=9*17=25, 9^4=9*25=1. So order 4.
+
+17: 17^2=1 mod32. So order 2.
+
+25: 25^2=625 mod32=17, 25^3=25*17=9, 25^4=25*9=1. So order 4.
+
+Thus, there are elements of order 4 (9 and 25), so the group is cyclic, hence isomorphic to C₄.
+
+(b)(i) Odd quadratic residues modulo32.
+
+Quadratic residues modulo 32. The odd numbers modulo32 are 1,3,5,...,31.
+
+A quadratic residue modulo32 is a number that is a square modulo32.
+
+Compute squares of odd numbers:
+
+1²=1
+
+3²=9
+
+5²=25
+
+7²=49≡17
+
+9²=81≡17
+
+11²=121≡121-3*32=25
+
+13²=169≡169-5*32=9
+
+15²=225≡1
+
+17²=289≡1
+
+19²=361≡361-11*32=361-352=9
+
+21²=441≡441-13*32=441-416=25
+
+23²=529≡529-16*32=529-512=17
+
+25²=625≡17
+
+27²=729≡729-22*32=729-704=25
+
+29²=841≡841-26*32=841-832=9
+
+31²=961≡961-30*32=961-960=1
+
+So the odd quadratic residues mod32 are {1,9,17,25}. These are the squares of the odd numbers mod32.
+
+(b)(ii) Prove n⁶ +3n⁴ +7n² ≡11 mod32 for odd n.
+
+Since n is odd, n=2k+1. But perhaps better to use the fact that odd numbers mod32 are congruent to ±1,±3,±5,±7,…,±15.
+
+Alternatively, since the multiplicative group mod32 is of order φ(32)=16. For odd n, n^16 ≡1 mod32 by Euler's theorem. But perhaps use the fact that quadratic residues modulo32 are {1,9,17,25} as above.
+
+Note that for any odd n, n² ≡1,9,17,25 mod32. From part (i), the odd quadratic residues are {1,9,17,25}. Let m =n². Then m ∈ {1,9,17,25}. Compute m³ +3m² +7m mod32 for each m:
+
+For m=1:
+
+1 +3*1 +7*1=1+3+7=11≡11 mod32
+
+For m=9:
+
+9³ +3*9² +7*9=729 +3*81 +63. Compute modulo32:
+
+9³=729≡17 (from earlier)
+
+3*9²=3*81=3*17=51≡51-32=19
+
+7*9=63≡63-32=31
+
+Total:17+19+31=67≡67-2*32=3. Wait, but this contradicts. Wait, maybe I made a mistake.
+
+Wait, compute each term modulo32:
+
+9³=729 mod32=729-22*32=729-704=25.
+
+3*9²=3*(81 mod32)=3*17=51 mod32=51-32=19.
+
+7*9=63 mod32=63-32=31.
+
+So 25+19+31=75 mod32=75-2*32=11.
+
+Similarly, for m=17:
+
+17³=4913 mod32. Let's compute 17²=289 mod32=1, then 17³=17*1=17 mod32.
+
+3*17²=3*1=3.
+
+7*17=119 mod32=119-3*32=23.
+
+Total:17+3+23=43 mod32=11.
+
+For m=25:
+
+25³=25*25*25=17*25=425 mod32=9.
+
+3*25²=3*17=51 mod32=19.
+
+7*25=175 mod32=175-5*32=175-160=15.
+
+Total:9+19+15=43 mod32=11.
+
+Therefore, in all cases, m³ +3m² +7m ≡11 mod32. Hence, n⁶ +3n⁴ +7n² ≡11 mod32.
+
+**Question 6: Surface S: z =x siny + y/x**
+
+(a) Determine determinant of Hessian matrix H.
+
+First, compute the first partial derivatives:
+
+z =x siny + y/x
+
+First derivatives:
+
+z_x = siny - y/x²
+
+z_y =x cosy +1/x
+
+Second derivatives:
+
+z_xx = 2y /x³
+
+z_xy = cosy - (-2y)/x³ ? Wait, no. Wait, z_x = siny - y/x². Then z_xy = partial derivative of z_x w.r.t y: cosy - (1/x² )
+
+z_yx = partial derivative of z_y w.r.t x: cosy -1/x²
+
+Since mixed partials are equal, z_xy = z_yx = cosy -1/x²
+
+z_yy = partial derivative of z_y w.r.t y: -x siny
+
+Thus, the Hessian matrix H is:
+
+[ z_xx   z_xy ]
+
+[ z_yx   z_yy ]
+
+So:
+
+[ 2y/x³       cosy -1/x² ]
+
+[ cosy -1/x²    -x siny ]
+
+Determinant is (2y/x³)(-x siny) - (cosy -1/x² )²
+
+= -2y siny /x² - (cosy -1/x² )²
+
+Therefore, determinant of H is -2y siny /x² - (cosy -1/x² )²
+
+(b) Deduce nature of stationary point P.
+
+Since there's only one stationary point, we need to determine if it's a minimum, maximum, or saddle. The determinant of Hessian at that point will tell us. If determinant >0 and z_xx >0, local min; if det>0 and z_xx <0, local max; if det <0, saddle point; if det=0, inconclusive.
+
+But since we are to deduce from the determinant expression. Given that S has only one stationary point P, and the problem says to use part (a), likely substitute the coordinates of P into the determinant. However, without knowing P's coordinates, perhaps we can reason about the sign.
+
+But part (c) tells us that at P, β + tanβ =0. So β is such that tanβ = -β. Which occurs at β=0 (trivial, but y=0 is excluded as per domain 0<y<π). The next solution is around y≈2.02876 radians (approx solution to y + tany =0). But since y is in (0, π), and tan y is negative in (π/2, π), so β is in (π/2, π).
+
+At that point, sinβ is positive (since β is in (π/2, π)), so sinβ >0. Also, x>0. So the first term of determinant: -2β sinβ /x² is negative. The second term: -(cosβ -1/x² )² is negative since squared term is positive, multiplied by -1. Therefore, the entire determinant is negative + negative = negative. Hence determinant <0, so P is a saddle point.
+
+(c) Show that β satisfies β + tanβ=0.
+
+To find stationary point, set the first partial derivatives to zero.
+
+z_x = siny - y/x² =0   (1)
+
+z_y =x cosy +1/x =0   (2)
+
+From (2): x cosy +1/x =0 → x² cosy +1=0 → cosy = -1/x².
+
+From (1): siny = y/x².
+
+Using the identity sin²y + cos²y =1:
+
+(y/x² )² + (-1/x² )² =1 → y²/x⁴ +1/x⁴ =1 → (y² +1)/x⁴ =1 →x⁴ = y² +1 →x²= sqrt(y² +1 ). But x>0, so x= (y² +1 )^{1/4}. Not sure if helpful.
+
+But from cosy = -1/x² and siny= y/x².
+
+Divide siny by cosy: tany = siny /cosy = (y/x² ) / (-1/x² ) = -y.
+
+Therefore, tany = -y → y + tany =0. Hence β + tanβ =0.
+
+**Question 7: Binet’s formula and sequence Sₙ =αⁿ +βⁿ**
+
+(a) α and β are roots of x² -x -1=0, so α + β=1, αβ=-1.
+
+(b)(i) Sₙ=αⁿ +βⁿ. S₂=α² +β²= (α +β )² -2αβ=1² -2*(-1)=1+2=3. S₃=α³ +β³=(α +β )³ -3αβ(α +β )=1 -3*(-1)(1)=1+3=4.
+
+(ii) Show Sₙ₊₂=Sₙ₊₁ +Sₙ.
+
+Since α and β satisfy the recurrence relation x² =x +1. Therefore, αⁿ⁺²=αⁿ⁺¹ +αⁿ, similarly for β. Therefore, Sₙ₊₂=αⁿ⁺² +βⁿ⁺²= (αⁿ⁺¹ +αⁿ ) + (βⁿ⁺¹ +βⁿ )=Sₙ₊₁ +Sₙ.
+
+(iii) S₀=α⁰ +β⁰=1+1=2, S₁=α +β=1. Then by induction using the recurrence Sₙ₊₂=Sₙ₊₁ +Sₙ, with initial integer terms, all Sₙ are integers.
+
+(c)(i) Tₙ=αⁿ. Since β is negative and |β|<1, βⁿ approaches 0. However, Tₙ=αⁿ would not equal Sₙ=αⁿ +βⁿ except when βⁿ=0, which doesn't happen. Hence, Tₙ is not equal to Sₙ for any n≥1.
+
+(ii) Modify Tₙ considering even and odd n. Since Sₙ=αⁿ +βⁿ. If n is even, βⁿ is positive; if n is odd, βⁿ is negative. But since we need Tₙ=αⁿ ± |β|ⁿ. However, since β is negative, βⁿ= (-|β| )ⁿ. So for even n, βⁿ=|β|ⁿ; for odd n, βⁿ=-|β|ⁿ. Therefore, Tₙ can be expressed as αⁿ + (-1)^n |β|ⁿ. But since |β|=α^{-1} (since αβ=-1 and α>0, β=-1/α ). Therefore, Tₙ=αⁿ + (-1)^n (-1)^n α^{-n} =αⁿ + α^{-n} ? Wait, but this is Sₙ=αⁿ +βⁿ=αⁿ + (-1/α )ⁿ=αⁿ + (-1)^n α^{-n}.
+
+So if n is even, Tₙ=αⁿ + α^{-n}; if n is odd, Tₙ=αⁿ - α^{-n}. But the question says "other than Tₙ=αⁿ +βⁿ", so we need to express it differently. Since β= -1/α, we can write Tₙ=αⁿ + (-1)^n α^{-n}.
+
+Alternatively, using floor function or parity. For example, Tₙ=αⁿ + (n mod 2==0 ? α^{-n} : -α^{-n} ). But the problem asks to state a modification considering cases even and odd. So answer: Tₙ=αⁿ + (-1)^n α^{-n}.
+
+**Question 8: Number theory**
+
+(a)(i) f(n)=2121ₙ=2n³ +1n² +2n +1. Factor this expression.
+
+Notice that 2121ₙ can be written as 2n³ +n² +2n +1.
+
+Try to factor:
+
+Group terms: (2n³ +n²) + (2n +1 )=n²(2n +1 ) +1(2n +1 )=(n² +1)(2n +1 ). Therefore, a(n)=n² +1, b(n)=2n +1.
+
+(ii) Since f(n)=a(n)*b(n), both a(n) and b(n) are integers >1 for n≥3. Thus, f(n) is composite.
+
+(b)(i) h= gcd(a(n),b(n))=gcd(n² +1, 2n +1 )
+
+Use Euclidean algorithm:
+
+gcd(n² +1,2n +1 )
+
+= gcd(2n +1, n² +1 - n*(2n +1)/2 )
+
+Wait, but let's do it step by step.
+
+Let d divide both n² +1 and 2n +1. Then d divides (2n +1 ) and n² +1.
+
+Compute n² +1 - n*(2n +1 )=n² +1 -2n² -n= -n² -n +1.
+
+But d divides this, so d divides -n² -n +1.
+
+Also, d divides 2n +1. Let's multiply 2n +1 by n: 2n² +n. Then subtract from -n² -n +1:
+
+(-n² -n +1 ) - (-1)(2n² +n )= -n² -n +1 +2n² +n= n² +1.
+
+Thus, d divides n² +1 and 2n +1, so d divides gcd(n² +1,2n +1 ). Therefore, repeating the process:
+
+gcd(n² +1,2n +1 )=gcd(2n +1, n² +1 )
+
+Now, compute n² +1 divided by 2n +1.
+
+Let n² +1 = q*(2n +1 ) + r. Let q= (n/2 -1/4 ), but since integer division, perhaps perform substitution.
+
+Let m=2n +1. Then n=(m-1)/2. Substitute into n² +1:
+
+((m-1)/2 )² +1 = (m² -2m +1)/4 +1 = (m² -2m +1 +4)/4 = (m² -2m +5)/4.
+
+Thus, gcd(m, (m² -2m +5)/4 )
+
+But m=2n +1, which is odd since n≥3.
+
+Since m divides (m² -2m +5)/4 ?
+
+Wait, compute (m² -2m +5) mod m:
+
+m² -2m +5 ≡0 -0 +5=5 mod m.
+
+Thus, gcd(m,5/4 ). But m is odd, and 5/4 is not integer. However, since we're dealing with integers, perhaps the remainder is 5.
+
+Thus, gcd(m,5 ). Therefore, gcd(2n +1,5 ). Hence, the gcd is 1 or5.
+
+Therefore, h is either1 or5.
+
+(ii) Find n such that h=5.
+
+We need 5 divides 2n +1. So 2n +1 ≡0 mod5 →2n≡-1 mod5→2n≡4 mod5→n≡2 mod5.
+
+Thus, n=5k +2. For example, n=2, but n≥3. Next n=7. Check n=7:
+
+a(7)=7² +1=50, b(7)=2*7 +1=15. gcd(50,15)=5. Therefore, n=7 is a solution.
+
+**Question 9: Group-like structure (C, ⊕)**
+
+C is all complex numbers except 1 and -1. Operation a ⊕ b = (a + b)/(ab +1 ).
+
+(a) Find identity element e such that a ⊕ e =a for all a in C.
+
+Set (a + e)/(ae +1 )=a → a + e =a(ae +1 )=a² e +a → a + e =a² e +a → e =a² e → e(1 -a² )=0.
+
+For this to hold for all a ≠±1, we must have e=0. Check:
+
+a ⊕0 = (a +0)/(a*0 +1 )=a/1=a. Similarly, 0 ⊕a =a. So identity is 0.
+
+(b) For each x in C, find inverse x' such that x ⊕x' =0.
+
+Set (x +x')/(x x' +1 )=0 →x +x' =0 →x' = -x. Check:
+
+(x + (-x))/(x*(-x) +1 )=0/( -x² +1 ). But denominator: -x² +1=1 -x². To be defined, 1 -x² ≠0→x²≠1→x≠±1, which holds since x∈C. Therefore, inverse is -x.
+
+(c) Check associativity: (a ⊕b )⊕c =a ⊕(b ⊕c )
+
+Compute both sides:
+
+Left side: ((a + b)/(ab +1 )) ⊕c = [ (a + b)/(ab +1 ) + c ] / [ ( (a + b)/(ab +1 ) )*c +1 ]
+
+= [ (a + b + c(ab +1 )) / (ab +1 ) ] / [ (c(a + b ) + ab +1 ) / (ab +1 ) ]
+
+= [a + b + abc +c ] / [ c(a + b ) + ab +1 ]
+
+Right side: a ⊕(b ⊕c ) = a ⊕[ (b +c )/(bc +1 ) ] = [ a + (b +c )/(bc +1 ) ] / [ a*(b +c )/(bc +1 ) +1 ]
+
+= [ (a(bc +1 ) +b +c ) / (bc +1 ) ] / [ (a(b +c ) + bc +1 ) / (bc +1 ) ]
+
+= [ a bc +a +b +c ] / [ a b +a c + bc +1 ]
+
+Compare numerators and denominators:
+
+Left numerator: a + b + c +abc
+
+Right numerator: a +b +c +abc
+
+Denominator left: ab +ac + bc +1
+
+Denominator right: ab +ac + bc +1
+
+Therefore, they are equal. Hence, operation is associative.
+
+(d) Explain why (C, ⊕) is not a group.
+
+Despite having identity and inverses, and associativity, the operation might not be closed. Wait, but for a,b ≠±1, does (a + b)/(ab +1 ) ever equal1 or -1?
+
+Suppose (a + b)/(ab +1 )=1 →a +b=ab +1 →ab -a -b +1=0→(a -1)(b -1)=0. So if a=1 or b=1, but a and b are in C, so a,b≠1. Similarly, (a +b)/(ab +1 )=-1 →a +b=-ab -1 →ab +a +b +1=0→(a +1)(b +1)=0. Since a,b≠-1, this can't happen. Therefore, operation is closed. So why is it not a group?
+
+Wait, the problem says "the set C consists of all complex numbers excluding 1 and -1". The operation is defined as (a +b)/(ab +1 ). To be a group, it must satisfy closure, associativity, identity, inverses. We have associativity, identity (0), inverses (-a). Closure: need to ensure that for any a,b ≠±1, (a +b)/(ab +1 )≠1 and ≠-1.
+
+But as shown earlier, (a +b)/(ab +1 )=1 only if (a -1)(b -1)=0, which is impossible since a,b ≠1. Similarly, =-1 only if (a +1)(b +1)=0, impossible. Hence, closure holds. So why isn't it a group?
+
+Wait, unless there's an element without inverse. But inverses are -a, which is in C provided -a ≠1 and ≠-1. So if a= -1, but a∈C, which excludes -1. Therefore, for all a∈C, -a ≠1 and -a≠-1 only if a≠-1 and a≠1, which holds. So why is (C, ⊕) not a group?
+
+Wait, perhaps there's a division by zero in the operation. For example, if ab +1=0. Then a ⊕b would be undefined. So even though a,b ≠±1, ab +1=0 is possible. For example, a=2, b=-1/2: ab +1=2*(-1/2 ) +1= -1 +1=0. Hence, a=2 and b=-0.5 are in C, but a ⊕b is undefined. Therefore, the operation is not closed/defined for all pairs, hence not a group.
+
+(d) Answer: The operation ⊕ is not defined for all pairs a,b∈C, since if ab +1=0, the operation results in division by zero. Hence, closure fails, so (C, ⊕) is not a group.
+
+(e) Find a subset D of C where (D, ⊕) is a group of order3.
+
+We need to find three elements in C that are closed under ⊕, include identity (0), and each has inverse in D.
+
+Let's try to find three elements including 0. But 0 is the identity. Suppose D={0, a, -a}. Check closure:
+
+0 ⊕a =a, 0 ⊕-a=-a.
+
+a ⊕a = (a +a)/(a² +1 )=2a/(a² +1 ). Need this to be in D.
+
+Similarly, a ⊕-a=0.
+
+-a ⊕-a=2*(-a)/(a² +1 )=-2a/(a² +1 ). This should also be in D.
+
+To have closure, 2a/(a² +1 ) must be either0, a, or -a. Since a≠0, 2a/(a² +1 )=a ⇒2a= a(a² +1 )⇒2= a² +1 ⇒a²=1 ⇒a=±1, which are excluded. Similarly, 2a/(a² +1 )=-a ⇒2= -a² -1 ⇒a²=-3, complex. So not possible.
+
+Alternative approach: Find three elements a,b,c such that they form a group under ⊕. Since it's order3, it must be cyclic, so there's an element g such that g⊕g⊕g=0.
+
+Alternatively, consider cube roots of zero under ⊕. Let’s think of elements satisfying g⊕g⊕g=0.
+
+But this is non-trivial. Perhaps use a known group structure. The multiplicative group modulo something?
+
+Alternatively, consider solutions to x⊕x⊕x=0. Let’s compute:
+
+First, x⊕x=(2x)/(x² +1 ). Then (x⊕x)⊕x= [ (2x/(x² +1 ) +x ] / [ (2x/(x² +1 ))*x +1 ].
+
+Simplify numerator: (2x +x(x² +1 )) / (x² +1 )= (2x +x³ +x )/(x² +1 )=(x³ +3x )/(x² +1 )
+
+Denominator: (2x²/(x² +1 ) +1 )= (2x² +x² +1 )/(x² +1 )=(3x² +1 )/(x² +1 )
+
+Therefore, (x⊕x)⊕x=(x³ +3x )/(3x² +1 )
+
+Set this equal to0: x³ +3x=0 →x(x² +3 )=0→x=0 or x=±i√3. But x=0 is allowed, and ±i√3 are in C (not equal to1 or -1). So if we take D={0, i√3, -i√3 }, check if this forms a group.
+
+Check closure:
+
+i√3 ⊕i√3=(2i√3 )/( (i√3 )² +1 )=(2i√3 )/( -3 +1 )=(2i√3 )/(-2 )=-i√3.
+
+Similarly, i√3 ⊕ -i√3=0.
+
+-i√3 ⊕-i√3=( -2i√3 )/( (-i√3 )² +1 )=( -2i√3 )/(-3 +1 )=( -2i√3 )/(-2 )=i√3.
+
+Thus, the set {0, i√3, -i√3 } is closed under ⊕, contains identity, each element has inverse (inverse of i√3 is -i√3 ), and associativity holds. Therefore, it's a group of order3.
